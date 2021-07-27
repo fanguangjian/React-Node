@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-24 11:48:49
- * @LastEditTime: 2021-07-25 17:39:09
+ * @LastEditTime: 2021-07-27 20:29:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mern-cloudmel/client/src/screens/Homescreen.js
@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 // import Products from "../Mockdata/product";
 import Product from "../components/Product";
+import Filter from "../components/Filter";
 import { getAllProducts } from "../actions/productActions";
 
 export default function Homescreen() {
@@ -34,6 +35,7 @@ export default function Homescreen() {
 
   return (
     <div>
+      <Filter/>
       <div className="row justify-content-center">
      
         {loading ? (
