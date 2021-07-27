@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-07-25 14:49:54
- * @LastEditTime: 2021-07-26 22:25:34
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-27 23:11:36
+ * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: /mern-cloudmel/client/src/store.js
+ * @FilePath: /React-Node/client/src/store.js
  */
 
 import { getAllProductsReducer, getProductByIdReducer } from "./reducers/productReducer";
@@ -15,6 +15,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { loginReducer, registerNewUserReducer } from "./reducers/userReducer";
+import { placeOrderReducer } from "./reducers/orderReducer";
 
 const finalReducer = combineReducers({
     getAllProductsReducer: getAllProductsReducer,
@@ -22,6 +23,7 @@ const finalReducer = combineReducers({
     cartReducer: cartReducer,
     registerNewUserReducer: registerNewUserReducer,
     loginReducer: loginReducer,
+    placeOrderReducer: placeOrderReducer
 
 })
 

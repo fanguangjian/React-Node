@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2021-07-27 20:02:15
- * @LastEditTime: 2021-07-27 21:57:21
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-27 22:26:49
+ * @LastEditors: your name
  * @Description: In User Settings Edit
  * @FilePath: /React-Node/client/src/components/Filter.js
  */
@@ -18,9 +18,9 @@ export default function Filter() {
   
 
   //wrong
-//   function search(){
-//      dispatch(filterProducts(searchkey , sort , category))
-//   }
+  function search(){
+     dispatch(filterProducts(searchkey , sort , category))
+  }
     return (
         <div>
             <div className="row justify-content-center shadow p-3 mb-5 bg-white rounded">
@@ -67,8 +67,8 @@ export default function Filter() {
                 </div>
 
                 <div className="col-md-2 mt-4 ml-2">
-                <button className="btn" onClick={()=>{dispatch(filterProducts(searchkey , sort , category))}}>FILTER</button>
-                {/* <button className="btn" onClick={search()}>FILTER</button> */}
+                {/* <button className="btn" onClick={()=>{dispatch(filterProducts(searchkey , sort , category))}}>FILTER</button> */}
+                <button className="btn" onClick={search}>FILTER</button>
 
                 </div>
             </div>

@@ -1,17 +1,17 @@
 /*
  * @Author: your name
  * @Date: 2021-07-25 22:06:08
- * @LastEditTime: 2021-07-25 22:28:33
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-27 22:34:04
+ * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: /mern-cloudmel/client/src/screens/cartScreen.js
+ * @FilePath: /React-Node/client/src/screens/cartScreen.js
  */
 
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { Money } from "react-format";
 import { addToCart , deleteFromCart } from '../actions/cartAction';
-// import Checkout from '../components/Checkout'
+import Checkout from '../components/Checkout'
 
 export default function Cartscreen() {
 
@@ -61,8 +61,7 @@ export default function Cartscreen() {
                      <hr/>
                      <h2 className='text-center'>SubTotal : <Money>{subtotal}</Money></h2>
                      <hr/>                    
-                     {/* <Checkout amount={subtotal}/>                    */}
-
+                     <Checkout amount={subtotal}/>    
                  </div>
 
             </div>
