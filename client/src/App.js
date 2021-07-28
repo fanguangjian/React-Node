@@ -1,10 +1,10 @@
 /*
  * @Author: G.F
  * @Date: 2021-07-24 00:08:10
- * @LastEditTime: 2021-07-26 20:15:48
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-28 23:37:54
+ * @LastEditors: your name
  * @Description: 
- * @FilePath: /MERN-Full-Stack/mern-cloudmel-frontend/client/src/App.js
+ * @FilePath: /React-Node/client/src/App.js
  */
 import logo from './logo.svg';
 import './App.css';
@@ -16,6 +16,8 @@ import Productdes from './screens/Productdes';
 import Cartscreen from './screens/cartScreen';
 import Loginscreen from './screens/Login';
 import Registerscreen from './screens/Register';
+import Orderscreen from './screens/Orderscreen';
+import OrderInfo from './screens/OrderInfo';
 
 
 function App() {
@@ -28,7 +30,8 @@ function App() {
         <Route path="/cart" component={Cartscreen} />
         <Route path="/login" component={Loginscreen}/>
         <Route path="/register" component={Registerscreen}/>
-
+        <Route path='/order'component={Orderscreen}/>
+        <Route path='/orderInfo/:orderId'component={OrderInfo}/>
       </BrowserRouter>
       {/* <Homescreen/> */}
     </div>

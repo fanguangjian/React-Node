@@ -1,7 +1,7 @@
 /*
  * @Author: G.F
  * @Date: 2021-07-27 22:51:56
- * @LastEditTime: 2021-07-28 00:15:09
+ * @LastEditTime: 2021-07-28 23:18:07
  * @LastEditors: your name
  * @Description: 
  * @FilePath: /React-Node/client/src/actions/orderAction.js
@@ -30,6 +30,31 @@ export const placeOrder =(token , subtotal) =>(dispatch , getState)=>{
           console.log(res);
      }).catch(err=>{
          dispatch({type:'PLACE_ORDER_FAILED'})
+     })
+}
+
+export const getOrdersByUserId=()=>(dispatch , getState)=>{
+     const userid = getState().loginReducer.currentUser._id
+      dispatch({type:'GET_ORDERSBYUSERID_REQUEST'})
+      axios.post('/api/orders/getOrdersbyUserId' , {userid:userid}).then(res=>{
+           dispatch({type:'GET_ORDERSBYUSERID_SUCCESS' , payload:res.data})
+           console.log(res.data);
+      }).catch(err=>{
+          dispatch({type:'GET_ORDERSBYUSERID_FAILED' , payload:err})
+      })
+}
+
+export const getOrderById=(orderId)=>(dispatch , getState)=>{   
+
+     dispatch({type:'GET_ORDERBYID_REQUEST'})
+
+     axios.post('/api/orders/getOrderById' , {orderId:orderId}).then(res=>{
+
+          dispatch({type:'GET_ORDERBYID_SUCCESS' , payload:res.data})
+          console.log(res.data);
+
+     }).catch(err=>{
+         dispatch({type:'GET_ORDERBYID_FAILED' , payload:err})
      })
 
 

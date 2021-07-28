@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-25 14:49:54
- * @LastEditTime: 2021-07-27 23:11:36
+ * @LastEditTime: 2021-07-28 22:29:30
  * @LastEditors: your name
  * @Description: In User Settings Edit
  * @FilePath: /React-Node/client/src/store.js
@@ -15,7 +15,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { loginReducer, registerNewUserReducer } from "./reducers/userReducer";
-import { placeOrderReducer } from "./reducers/orderReducer";
+import { placeOrderReducer,  getOrdersByUserIdReducer,  getOrderByIdReducer } from "./reducers/orderReducer";
 
 const finalReducer = combineReducers({
     getAllProductsReducer: getAllProductsReducer,
@@ -23,7 +23,10 @@ const finalReducer = combineReducers({
     cartReducer: cartReducer,
     registerNewUserReducer: registerNewUserReducer,
     loginReducer: loginReducer,
-    placeOrderReducer: placeOrderReducer
+    placeOrderReducer: placeOrderReducer,
+    getProductByIdReducer : getProductByIdReducer,
+    getOrdersByUserIdReducer : getOrdersByUserIdReducer,
+    getOrderByIdReducer : getOrderByIdReducer,
 
 })
 

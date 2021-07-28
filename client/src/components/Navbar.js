@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-07-24 10:03:32
- * @LastEditTime: 2021-07-26 23:55:10
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-28 22:34:14
+ * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: /client/src/components/Navbar.js
+ * @FilePath: /React-Node/client/src/components/Navbar.js
  */
 import React from "react";
 import { Menu, Dropdown } from 'antd';
@@ -29,7 +29,7 @@ export default function Navbar() {
         <a href="/profile">Profile</a>
       </Menu.Item>
       <Menu.Item key="1">
-        <a href="/orders">Orders</a>
+        <a href="/order">Order</a>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="3"  onClick={()=>{dispatch(logoutUser())}}>  <IconFont type="icon-tuichu" />Logout</Menu.Item>

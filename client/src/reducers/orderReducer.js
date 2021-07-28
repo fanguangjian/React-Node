@@ -1,7 +1,7 @@
 /*
  * @Author: G.F
  * @Date: 2021-07-27 23:08:55
- * @LastEditTime: 2021-07-27 23:10:16
+ * @LastEditTime: 2021-07-28 22:18:00
  * @LastEditors: your name
  * @Description: 
  * @FilePath: /React-Node/client/src/reducers/orderReducer.js
@@ -25,6 +25,74 @@ export const placeOrderReducer =(state={} , action)=>{
             ...state ,
             loading : false,
             error : true
+     }
+     default : return{state}
+    }
+}
+
+export const getOrdersByUserIdReducer =(state={} , action)=>{
+
+    switch(action.type)
+    {
+        case 'GET_ORDERSBYUSERID_REQUEST' : return{
+            ...state ,
+            loading : true
+        }
+        case 'GET_ORDERSBYUSERID_SUCCESS' : return{
+         ...state ,
+         loading : false,
+         orders : action.payload
+     }
+     case 'GET_ORDERSBYUSERID_FAILED' : return{
+         ...state ,
+         loading : false,
+         error : true
+     }
+     default : return{state}
+    }
+
+}
+
+export const getOrderByIdReducer =(state={} , action)=>{
+    switch(action.type)
+    {
+        case 'GET_ORDERBYID_REQUEST' : return{
+            ...state ,
+            loading : true
+        }
+        case 'GET_ORDERBYID_SUCCESS' : return{
+         ...state ,
+         loading : false,
+         order : action.payload
+     }
+     case 'GET_ORDERBYID_FAILED' : return{
+         ...state ,
+         loading : false,
+         error : true
+     }
+     default : return{state}
+    }
+}
+
+
+
+export const getAllOrdersReducer =(state={orders : []} , action)=>{
+
+    switch(action.type)
+    {
+        case 'GET_ALLORDERS_REQUEST' : return{
+            ...state ,
+            loading : true
+        }
+        case 'GET_ALLORDERS_SUCCESS' : return{
+         ...state ,
+         loading : false,
+         orders : action.payload
+     }
+     case 'GET_ALLORDERS_FAILED' : return{
+         ...state ,
+         loading : false,
+         error : true
      }
      default : return{state}
     }
