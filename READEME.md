@@ -1,7 +1,7 @@
 <!--
  * @Author: G.F
  * @Date: 2021-07-23 23:54:53
- * @LastEditTime: 2021-07-28 00:06:48
+ * @LastEditTime: 2021-07-29 00:29:55
  * @LastEditors: your name
  * @Description: In User Settings Edit
  * @FilePath: /React-Node/READEME.md
@@ -30,10 +30,12 @@ npm init
 
 npm i express
 npm i nodemon
-
+# start
 nodemon server
 
 npm i mongoose
 npm i body-parser
 npm i uuid
 npm install --save express cors body-parser stripe
+
+npm i cross-env
