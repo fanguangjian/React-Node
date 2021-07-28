@@ -1,7 +1,7 @@
 /*
  * @Author: G.F
  * @Date: 2021-07-27 23:34:45
- * @LastEditTime: 2021-07-28 00:36:23
+ * @LastEditTime: 2021-07-28 20:57:10
  * @LastEditors: your name
  * @Description: 
  * @FilePath: /React-Node/routes/orderRoute.js
@@ -14,59 +14,30 @@ const Order = require('../models/orderModel');
 const { SuccessModel, ErrorModel} = require('../models/resModel');
 
 
-// router.post('/placeorder', async(req, res)=>{
-//     const {token, cartItems, currentUser, subtotal} = req.body;
-//     console.log(token, 'tt');
-//     const customer = await stripe.customers.create({
-//         email : token.email , 
-//         source : token.id
-//     });
-
-//     const payment = await stripe.charges.create({
-//           amount : subtotal , 
-//           currency : 'inr', 
-//           customer : customer.id , 
-//           receipt_email : token.email
-//     },{
-//         idempotencykey: uuidv4()
-//     });
-
-//     if(payment){
-//         res.send("Pay");
-//     }else{
-//         res.send("Failed");
-//     }
-// })
-
-router.post("/placeorder", async(req, res) => {
-
-    const {token , cartItems , currentUser , subtotal} = req.body
-
+router.post('/placeorder', async(req, res)=>{
+    const {token, cartItems, currentUser, subtotal} = req.body;
+    // console.log(token, 'tt');
     const customer = await stripe.customers.create({
         email : token.email , 
         source : token.id
-    })
+    });
+    // console.log(subtotal, 'subtotal');
 
     const payment = await stripe.charges.create({
-          amount : subtotal*100 , 
-          currency : 'inr' , 
+          amount : subtotal*100, 
+        //   amount : 1000, 
+          currency : 'aud', 
           customer : customer.id , 
           receipt_email : token.email
-    } , {
+    },{
         idempotencyKey: uuidv4()
-    })
+    });
 
-
-    if(payment)
-    {
+    if(payment){
         res.send("Pay");
-       
+    }else{
+        res.send("Failed");
     }
-    else{
-        return res.status(400).json({ message: 'Payment failed' });
-    }
-  
-});
-
+})
 
 module.exports =router

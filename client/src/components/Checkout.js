@@ -1,7 +1,7 @@
 /*
  * @Author: G.F
  * @Date: 2021-07-27 22:18:24
- * @LastEditTime: 2021-07-28 00:14:39
+ * @LastEditTime: 2021-07-28 20:57:26
  * @LastEditors: your name
  * @Description: In User Settings Edit
  * @FilePath: /React-Node/client/src/components/Checkout.js
@@ -21,9 +21,9 @@ export default function Checkout(amount) {
     const { loading , success , error } = orderstate
 
     function tokenHandler(token){
-         console.log(token);
+        //  console.log(token);
          console.log(amount);
-         dispatch(placeOrder(token,amount))
+         dispatch(placeOrder(token,amount.amount))
     }
     function validate(){
         if(!localStorage.getItem('currentUser')){
