@@ -1,13 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-07-26 21:14:45
- * @LastEditTime: 2021-07-26 22:28:40
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-29 20:10:19
+ * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: /mern-cloudmel/routes/userRoute.js
+ * @FilePath: /React-Node/routes/userRoute.js
  */
 const express = require("express");
 const router = express.Router();
+const { setToken } = require('../modules/setToken');
 const User = require('../models/userModel');
 const { SuccessModel, ErrorModel} = require('../models/resModel');
 
@@ -43,10 +44,13 @@ router.post("/login", (req, res)=>{
         // console.log(docs);
         if(docs.length > 0){
             // res.send('Login Successfully!')
+            const token = setToken(req.body.email, req.body.password);
+            console.log(token, 'token');
             const user = {
                 name : docs[0].name , 
                 _id : docs[0]._id ,
                 email : docs[0].email,
+                token: token
             }
             res.send(user)
         }else{

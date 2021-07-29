@@ -1,7 +1,7 @@
 <!--
  * @Author: G.F
  * @Date: 2021-07-23 23:54:53
- * @LastEditTime: 2021-07-28 00:06:48
+ * @LastEditTime: 2021-07-29 22:24:55
  * @LastEditors: your name
  * @Description: In User Settings Edit
  * @FilePath: /React-Node/READEME.md
@@ -36,4 +36,8 @@ nodemon server
 npm i mongoose
 npm i body-parser
 npm i uuid
-npm install --save express cors body-parser stripe
+npm install --save express body-parser stripe  
+npm install  cors jsonwebtoken
+brew install redis 
+# start redis
+redis-server
