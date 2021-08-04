@@ -1,7 +1,7 @@
 /*
  * @Author: G.F
  * @Date: 2021-08-04 22:42:15
- * @LastEditTime: 2021-08-04 23:06:42
+ * @LastEditTime: 2021-08-04 23:21:55
  * @LastEditors: your name
  * @Description: 
  * @FilePath: /React-Node/client/src/components/Review.js
@@ -67,7 +67,7 @@ export default function Review({product}) {
                             readonly
                         />
             <p>{review.comment}</p>
-            <p>By : {review.name}</p>
+            <p>View By : {review.name}</p>
             <hr/>
                 </div>
             }))}
