@@ -1,10 +1,10 @@
 /*
  * @Author: G.F
  * @Date: 2021-07-28 22:07:47
- * @LastEditTime: 2021-07-28 23:13:28
+ * @LastEditTime: 2021-08-01 14:46:49
  * @LastEditors: your name
  * @Description: 
- * @FilePath: /React-Node/client/src/screens/orderScreen.js
+ * @FilePath: /React-Node/client/src/screens/Orderscreen.js
  */
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,12 +27,20 @@ export default function Orderscreen() {
     }
   }, [dispatch]);
 
+  const [btnColor, setBtnColor] = useState(false);
+
+  const changeColorHandler = () => {
+    setBtnColor(!btnColor);
+  }
+
 
     return (
         <div>
         <div className="row justify-content-center mt-5">
           <div className="col-md-8">
             <h2>MY ORDERS</h2>
+            <button onClick={changeColorHandler} style={{ backgroundColor: btnColor ? 'red' : 'green'}}>按钮1</button>
+             <button onClick={changeColorHandler}  style={{ backgroundColor: !btnColor ? 'red' : 'green'}}>按钮2</button>
   
             <table className="table table-striped table-responsive-sm">
               <thead>

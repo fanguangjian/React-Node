@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-07-25 14:18:03
- * @LastEditTime: 2021-07-27 21:42:39
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-04 22:41:59
+ * @LastEditors: your name
  * @Description: Dispatch action
- * @FilePath: /mern-cloudmel/client/src/actions/productActions.js
+ * @FilePath: /React-Node/client/src/actions/productActions.js
  */
 
 import axios from "axios";
@@ -64,4 +64,18 @@ export const filterProducts=(searchKey , sortKey , category)=>dispatch=>{
   })
 
 
+}
+
+export const addProductReview = (review , productid)=>(dispatch , getState)=>{    
+  dispatch({type:'ADD_PRODUCT_REVIEW_REQUEST'})
+  const currentUser = getState().loginReducer.currentUser
+  axios.post('/api/products/addReview' , {review , productid , currentUser}).then(res=>{
+    console.log(res);
+    dispatch({type:'ADD_PRODUCT_REVIEW_SUCCESS'})
+    alert('Your review submitted successfully')
+    window.location.reload()
+
+  }).catch(err=>{
+    dispatch({type:'ADD_PRODUCT_REVIEW_FAILED'})
+  })
 }

@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-07-25 14:17:26
- * @LastEditTime: 2021-07-25 18:05:10
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-04 22:51:36
+ * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: /mern-cloudmel/client/src/reducers/productReducer.js
+ * @FilePath: /React-Node/client/src/reducers/productReducer.js
  */
 export const getAllProductsReducer=(state={products: []}, action) => {
     
@@ -41,6 +41,26 @@ export const getProductByIdReducer=(state={product : {}} ,action)=>{
             loading : false
         }
         default : return state
+    }
+
+}
+
+
+export const addProductReviewReducer=(state={},action)=>{
+
+    switch(action.type){
+        case 'ADD_PRODUCT_REVIEW_REQUEST' : return {
+            loading : true
+        }
+        case 'ADD_PRODUCT_REVIEW_SUCCESS' : return {
+           loading : false,
+           success : true
+       }
+       case 'ADD_PRODUCT_REVIEW_REQUEST' : return {
+           loading : false,
+           error:true
+       }
+       default : return state
     }
 
 }

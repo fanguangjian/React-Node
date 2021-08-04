@@ -1,13 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2021-07-25 14:49:54
- * @LastEditTime: 2021-07-28 22:29:30
+ * @LastEditTime: 2021-08-04 22:53:12
  * @LastEditors: your name
  * @Description: In User Settings Edit
  * @FilePath: /React-Node/client/src/store.js
  */
 
-import { getAllProductsReducer, getProductByIdReducer } from "./reducers/productReducer";
+import { getAllProductsReducer, getProductByIdReducer, addProductReviewReducer } from "./reducers/productReducer";
 import { cartReducer } from "./reducers/cartReducer"; 
 import { combineReducers } from 'redux';
 import { createStore, applyMiddleware } from "redux";
@@ -27,6 +27,7 @@ const finalReducer = combineReducers({
     getProductByIdReducer : getProductByIdReducer,
     getOrdersByUserIdReducer : getOrdersByUserIdReducer,
     getOrderByIdReducer : getOrderByIdReducer,
+    addProductReviewReducer: addProductReviewReducer,
 
 })
 

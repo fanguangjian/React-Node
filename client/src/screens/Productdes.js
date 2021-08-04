@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-07-24 13:42:47
- * @LastEditTime: 2021-07-25 21:30:03
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-08-04 23:08:29
+ * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: /mern-cloudmel/client/src/screens/Productdes.js
+ * @FilePath: /React-Node/client/src/screens/Productdes.js
  */
 import React, { useEffect, useState } from 'react'
 // import products from '../Mockdata/product'
@@ -12,6 +12,7 @@ import { Money } from "react-format";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from '../actions/cartAction';
 import { getProductById } from '../actions/productActions';
+import Review from "../components/Review";
 
 
 
@@ -41,7 +42,7 @@ export default function Productdes({match}) {
                     <h1>Somthing went wrong </h1>
                 ) : ( 
                     <div>
-                    <div>{product.name}</div>
+                    {/* <div>{product.name}</div> */}
                     <div className="row">
                         <div className="col-md-6">
                             <div className="card p-2 m-2">
@@ -65,7 +66,10 @@ export default function Productdes({match}) {
                                 <hr />
                                 <button className="btn btn-dark" onClick={addtoCart}>Add to Cart</button>
                             </div>
+                            <hr />
+                            <Review product={product} />
                         </div>
+                 
                     </div>
                 </div>
                 )
